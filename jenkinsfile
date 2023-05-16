@@ -1,0 +1,13 @@
+pipeline{
+    agent any
+    stages {
+        stage('download'){
+            steps{
+                sh """
+                    ssh root@172.31.38.193 'sh dependeic.sh'
+                """
+            }
+
+        }
+    }
+}
