@@ -4,15 +4,15 @@ pipeline{
         stage('build'){
             steps{
                 sh """
-                    scp dependeic.sh root@172.31.38.193:/root
+                    scp dependeic.sh root@172.31.21.31:/root
                 """
             }
         }
         stage('download'){
             steps{
                 sh """
-                
-                    ssh root@172.31.38.193 'sh dependeic.sh'
+
+                    ssh root@172.31.21.31 'sh dependeic.sh'
                 """
             }
 
