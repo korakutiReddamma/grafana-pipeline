@@ -1,9 +1,17 @@
 pipeline{
     agent any
     stages {
+        stage('build'){
+            steps{
+                sh """
+                    scp dependeic.sh root@172.31.38.193: /root
+                """
+            }
+        }
         stage('download'){
             steps{
                 sh """
+                    
                     ssh root@172.31.38.193 'sh dependeic.sh'
                 """
             }
